@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <AbilityGroupDef>
+    <defName>Miho_Heal</defName>
+    <cooldownTicks>5000</cooldownTicks>
+  </AbilityGroupDef>
+  <AbilityGroupDef>
+    <defName>Miho_HealTwo</defName>
+    <cooldownTicks>5000</cooldownTicks>
+  </AbilityGroupDef>
+  <AbilityGroupDef>
+    <defName>Miho_Seduce</defName>
+    <cooldownTicks>300000</cooldownTicks>
+  </AbilityGroupDef>
+  <AbilityGroupDef>
+    <defName>Miho_Spiritualize</defName>
+    <cooldownTicks>300000</cooldownTicks>
+  </AbilityGroupDef>
+  
+  <AbilityGroupDef>
+    <defName>Miho_Butterfly</defName>
+    <cooldownTicks>625</cooldownTicks>
+  </AbilityGroupDef>
+  <AbilityGroupDef>
+    <defName>Miho_Abomi</defName>
+    <cooldownTicks>3125</cooldownTicks>
+  </AbilityGroupDef>
+  
+  <AbilityGroupDef>
+    <defName>Miho_Fox</defName>
+    <cooldownTicks>420000</cooldownTicks>
+  </AbilityGroupDef>
+ 
+  <AbilityGroupDef>
+    <defName>Miho_Turret</defName>
+    <cooldownTicks>1250</cooldownTicks>
+  </AbilityGroupDef>
+ 
+  <AbilityGroupDef>
+    <defName>Miho_Sandevistan</defName>
+    <cooldownTicks>420000</cooldownTicks>
+  </AbilityGroupDef>
+ 
+  <AbilityDef ParentName="MihoWordOfBase">
+    <defName>Miho_Ability_Heal</defName>
+    <label>치유의 손길</label>
+    <description>병을 낫게하고 상처를 아물게 해주는 치유의 손길을 발산합니다.</description>
+    <iconPath>Icon/Abilities/MihoHeal</iconPath>
+    <hotKey>Misc12</hotKey>
+    <statBases>
+      <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+      <Ability_Duration>90</Ability_Duration>
+      <Ability_EntropyGain>150</Ability_EntropyGain>
+
+    </statBases>
+        <groupDef>Miho_Heal</groupDef>
+
+    <verbProperties>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <onlyTargetColonistsOrPrisonersOrSlaves>True</onlyTargetColonistsOrPrisonersOrSlaves>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Miho_Heal_Hediff</hediffDef>
+        <durationMultiplier>PsychicSensitivity</durationMultiplier>
+        <onlyBrain>True</onlyBrain>
+        <psychic>True</psychic>
+        <applicableToMechs>False</applicableToMechs>
+        <goodwillImpact>5</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilitySocialInteraction">
+        <interactionDef>WordOfJoy</interactionDef>
+      </li>
+      <li Class="CompProperties_AbilityCoagulate">
+        <tendQualityRange>0.6~0.8</tendQualityRange>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef ParentName="PsycastHediffBase">
+    <defName>Miho_Heal_Hediff</defName>
+    <label>치유받음</label>
+    <description>메카나이트-초능력을 이용한 치유를 받고 있습니다.</description>
+    <isBad>false</isBad>
+   <comps>
+			<li Class="HediffCompProperties_Effecter">
+				<stateEffecter>Miho_Heal</stateEffecter>
+				<severityIndices>0~5</severityIndices>
+			</li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ImmunityGainSpeed>3</ImmunityGainSpeed>
+          <InjuryHealingFactor>10</InjuryHealingFactor>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+	<ThingDef ParentName="MoteBase">
+		<defName>Miho_Mote_Heal</defName>
+		<graphicData>
+			<texPath>Things/Fleck/Heal</texPath>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<thingClass>MoteThrownAttached</thingClass>
+		<altitudeLayer>MetaOverlays</altitudeLayer>
+		<mote>
+			<fadeInTime>1.5</fadeInTime>
+			<solidTime>0</solidTime>
+			<fadeOutTime>1</fadeOutTime>
+			<attachedDrawOffset>(0, 0, -0.3)</attachedDrawOffset>
+		</mote>
+	</ThingDef>
+
+	<EffecterDef>
+		<defName>Miho_Heal</defName>
+			<children>
+				<li>
+					<subEffecterClass>SubEffecter_DrifterEmoteChance</subEffecterClass>
+					<scale>0.9~1.1</scale>
+					<chancePerTick>0.02</chancePerTick>
+					<positionRadius>0.3</positionRadius>
+					<moteDef>Miho_Mote_Heal</moteDef>
+					<speed>0.18~0.6</speed>
+					<angle>-45~45</angle>
+				</li>
+			</children>
+	</EffecterDef>
+
+	
+  <AbilityDef ParentName="MihoWordOfBase">
+    <defName>Miho_Ability_Spiritualize</defName>
+    <label>영성화</label>
+    <description>시전자 본인이 메카나이트-초능력 전달체가 되어 주변 시전자들의 신경열 스트레스를 해소시켜 줍니다.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <iconPath>Icon/Abilities/Spiritual</iconPath>
+    <hotKey>Misc12</hotKey>
+    <statBases>
+      <Ability_PsyfocusCost>0.3</Ability_PsyfocusCost> <!-- Minimum cost -->
+      <Ability_Duration>400</Ability_Duration>
+    </statBases>
+        <groupDef>Miho_Word</groupDef>
+
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Miho_Spiritualize_Hediff</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+
+
+
+    <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Spawn_Fox</defName>
+    <label>운반여우 소환</label>
+    <description>정착지의 짐들을 운반하는 작은 도우미를 소환합니다.</description>
+        <iconPath>Icon/Abilities/SummonFox</iconPath>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+        <writeCombatLog>True</writeCombatLog>
+        <groupDef>Miho_Fox</groupDef>
+        <statBases>
+      <Ability_PsyfocusCost>0.4</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>5</warmupTime>
+            <range>10.9</range>
+            <targetParams>
+              <canTargetSelf>False</canTargetSelf>
+              <canTargetLocations>True</canTargetLocations>
+              <canTargetAnimals>False</canTargetAnimals>
+              <canTargetPawns>False</canTargetPawns>
+              <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+		    <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Miho_Fox_Spawn_Proj</projectileDef>
+            </li>
+			
+        </comps>
+    </AbilityDef>
+	
+    <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Spawn_Butterfly</defName>
+    <label>칼날나비때 소환</label>
+    <aiCanUse>true</aiCanUse>
+
+    <description>굉장히 날카로운 날개를 지닌 나비때를 소환합니다.</description>
+        <iconPath>Icon/Abilities/SummonButterfly</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <groupDef>Miho_Butterfly</groupDef>
+        <statBases>
+      <Ability_EntropyGain>150</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>7.5</warmupTime>
+            <range>16.9</range>
+            <targetParams>
+              <canTargetSelf>False</canTargetSelf>
+              <canTargetLocations>True</canTargetLocations>
+              <canTargetAnimals>False</canTargetAnimals>
+              <canTargetPawns>False</canTargetPawns>
+              <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+		    <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Miho_Butterfly_Spawn_Proj</projectileDef>
+            </li>
+        </comps>
+    </AbilityDef>
+  
+    <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Spawn_Turret</defName>
+    <label>여우불 화로 소환</label>
+    <aiCanUse>true</aiCanUse>
+
+    <description>여우불을 발사하는 화로를 소환합니다.</description>
+        <iconPath>Icon/Abilities/MihoTurret</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <groupDef>Miho_Turret</groupDef>
+        <statBases>
+      <Ability_EntropyGain>225</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.1</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>7.5</warmupTime>
+            <range>16.9</range>
+            <targetParams>
+              <canTargetSelf>False</canTargetSelf>
+              <canTargetLocations>True</canTargetLocations>
+              <canTargetAnimals>False</canTargetAnimals>
+              <canTargetPawns>False</canTargetPawns>
+              <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+		    <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Miho_Turret_Spawn_Proj</projectileDef>
+            </li>
+        </comps>
+    </AbilityDef>
+	
+  <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Skip</defName>
+    <label>재조립 도약</label>
+    <description>특정한 위치로 텔레포트 시킬 수 있는 기술 입니다.</description>
+    <iconPath>UI/Abilities/Skip</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <hotKey>Misc9</hotKey>
+    <statBases>
+      <Ability_EntropyGain>40</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.03</Ability_PsyfocusCost>
+    </statBases>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <range>31.9</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetItems>True</canTargetItems>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityTeleport">
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>True</requiresLineOfSight>
+        <range>31.9</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <stunTicks>18~60</stunTicks>
+        <goodwillImpact>0</goodwillImpact>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+     <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Spawn_Thrumbo</defName>
+    <label>메카나이트 혐오체 소환</label>
+    <aiCanUse>true</aiCanUse>
+
+    <description>끔찍한 전쟁병기를 소환합니다.</description>
+        <iconPath>Icon/Abilities/SummonThrumbo</iconPath>
+        <writeCombatLog>True</writeCombatLog>
+        <groupDef>Miho_Abomi</groupDef>
+        <statBases>
+      <Ability_EntropyGain>150</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost>
+        </statBases>
+        <verbProperties>
+            <warmupTime>12</warmupTime>
+            <range>16.9</range>
+            <targetParams>
+              <canTargetSelf>False</canTargetSelf>
+              <canTargetLocations>True</canTargetLocations>
+              <canTargetAnimals>False</canTargetAnimals>
+              <canTargetPawns>False</canTargetPawns>
+              <canTargetMechs>False</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+		    <li Class="CompProperties_AbilityLaunchProjectile">
+                <projectileDef>Miho_Thrumbo_Spawn_Proj</projectileDef>
+            </li>
+        </comps>
+    </AbilityDef>
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Miho_Butterfly_Spawn_Proj</defName>
+		<label>MihoSpawner</label>
+		<graphicData>
+			<texPath>Things/WeaponSpecial/Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<speed>70</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<armorPenetrationBase>0</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<explosionRadius>0.1</explosionRadius>
+			<explosionDelay>0</explosionDelay>
+			<preExplosionSpawnThingDef>Miho_Butterfly_Portal</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>1</preExplosionSpawnChance>
+		</projectile>
+		<comps>
+			<li Class="Monotail.CompProperties_FactionSetter"/>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Miho_MagicCircle</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Miho_Fox_Spawn_Proj</defName>
+		<label>MihoSpawner</label>
+		<graphicData>
+			<texPath>Things/WeaponSpecial/Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<speed>70</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<armorPenetrationBase>0</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<explosionRadius>0.1</explosionRadius>
+			<explosionDelay>0</explosionDelay>
+			<preExplosionSpawnThingDef>Miho_Fox_Portal</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>1</preExplosionSpawnChance>
+		</projectile>
+		<comps>
+			<li Class="Monotail.CompProperties_FactionSetter"/>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Miho_MagicCircle</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Miho_Thrumbo_Spawn_Proj</defName>
+		<label>MihoSpawner</label>
+		<graphicData>
+			<texPath>Things/WeaponSpecial/Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<speed>70</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<armorPenetrationBase>0</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<explosionRadius>0.1</explosionRadius>
+			<explosionDelay>0</explosionDelay>
+			<preExplosionSpawnThingDef>Miho_Thrumbo_Portal</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>1</preExplosionSpawnChance>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Miho_MagicCircle_Big</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+		<defName>Miho_Turret_Spawn_Proj</defName>
+		<label>MihoSpawner</label>
+		<graphicData>
+			<texPath>Things/WeaponSpecial/Blank</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>TransparentPostLight</shaderType>
+		</graphicData>
+		<thingClass>Projectile_Explosive</thingClass>
+		<projectile>
+			<speed>70</speed>
+			<damageDef>Bomb</damageDef>
+			<damageAmountBase>0</damageAmountBase>
+			<armorPenetrationBase>0</armorPenetrationBase>
+			<stoppingPower>3</stoppingPower>
+			<explosionRadius>0.1</explosionRadius>
+			<explosionDelay>0</explosionDelay>
+			<preExplosionSpawnThingDef>Miho_Turret_Flame</preExplosionSpawnThingDef>
+			<preExplosionSpawnChance>1</preExplosionSpawnChance>
+		</projectile>
+		<comps>
+			<li Class="Monotail.CompProperties_FactionSetter"/>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Miho_MagicCircle</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+
+
+  <AbilityDef ParentName="MihoWordOfBase">
+    <defName>Miho_Ability_Sandevistan</defName>
+    <label>뷸릿 타임</label>
+    <description>사이버펑크 스러운 의식 증진 장치입니다. 별로 기초적인 기술은 아닌거 같습니다.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <iconPath>Icon/Abilities/MihoPowerstrike</iconPath>
+    <hotKey>Misc12</hotKey>
+    <statBases>
+      <Ability_EntropyGain>75</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.15</Ability_PsyfocusCost> <!-- Minimum cost -->
+    </statBases>
+        <groupDef>Miho_Sandevistan</groupDef>
+
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Miho_Sandevistan_Hediff</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  <AbilityDef ParentName="MihoPsycastBase">
+    <defName>Miho_Ability_Batto</defName>
+    <label>도약 발도</label>
+    <description>빠르게 마법의 검을 뽑아 적을 일격에 살해하는 기술입니다.</description>
+    <category>Skip</category>
+
+    <iconPath>Icon/Abilities/MihoBatto</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <showPsycastEffects>False</showPsycastEffects>
+    <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+    <displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+    <statBases>
+      <Ability_EntropyGain>125</Ability_EntropyGain>
+      <Ability_PsyfocusCost>0.4</Ability_PsyfocusCost>
+    </statBases>
+        <groupDef>Miho_Butterfly</groupDef>
+
+    <verbProperties>
+            <verbClass>MonoTail.Verb_MihochanCastPsycast</verbClass>
+      <warmupTime>4</warmupTime>
+      <range>0.5</range>
+      <targetParams>
+        <canTargetSelf>True</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetItems>False</canTargetItems>
+        <canTargetPawns>True</canTargetPawns>
+        <canTargetMechs>True</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class = "CompProperties_AbilityTeleport">
+        <compClass>CompAbilityEffect_Teleport</compClass>
+        <destination>Selected</destination>
+        <requiresLineOfSight>True</requiresLineOfSight>
+        <range>14.9</range>
+        <clamorType>Ability</clamorType>
+        <clamorRadius>10</clamorRadius>
+        <destClamorType>Ability</destClamorType>
+        <destClamorRadius>10</destClamorRadius>
+        <stunTicks>1~6</stunTicks>
+        <goodwillImpact>-15</goodwillImpact>
+        <applyGoodwillImpactToLodgers>False</applyGoodwillImpactToLodgers>
+      </li>
+            <li Class="CompProperties_AbilityLaunchProjectile">
+               <projectileDef>Miho_Batto_Proj</projectileDef>
+            </li>
+    </comps>
+  </AbilityDef>
+  
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>Miho_Batto_Proj</defName>
+		<label>발도</label>
+    <thingClass>Projectile_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Projectile/MihoFireballGrenade</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shaderType>TransparentPostLight</shaderType>
+		<drawSize>1.08</drawSize>
+		</graphicData>
+		<projectile>
+			<damageDef>Miho_MagicBombBatto</damageDef>
+			<damageAmountBase>270</damageAmountBase>
+			<armorPenetrationBase>0.95</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+			<speed>150</speed>
+			<explosionRadius>1.5</explosionRadius>
+			<alwaysFreeIntercept>false</alwaysFreeIntercept>
+			<flyOverhead>false</flyOverhead>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+		</projectile>
+		<comps>
+			<li Class="CompProperties_ProjectileEffecter">
+				<effecterDef>Miho_MagicBatto</effecterDef>
+			</li>
+		</comps>
+	</ThingDef>
+	
+  <AbilityDef ParentName="MihoWordOfBase">
+    <defName>Miho_Ability_Command_Charge</defName>
+    <label>돌격 지휘</label>
+    <description>초능력을 통한 텔레파시로 효율적인 돌격 명령을 내립니다.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <iconPath>Icon/Abilities/Command_Charge</iconPath>
+    <hotKey>Misc12</hotKey>
+    <statBases>
+      <Ability_PsyfocusCost>0.25</Ability_PsyfocusCost> <!-- Minimum cost -->
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+        <groupDef>Miho_Word</groupDef>
+
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Miho_Command_Charge_Hediff</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+
+ <HediffDef ParentName="RoleStatBuff">
+    <defName>Miho_Command_Charge_Hediff</defName>
+    <label>돌격 지휘</label>
+    <description>"아무튼 꼬라박아! 그리고 이겨!"</description>
+    <hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<minSeverity>0</minSeverity>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+			</li>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_CombatCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>true</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>Miho_Command_ChargeCommand_Hediff</hediff>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <statOffsets>
+		  <MoveSpeed>1</MoveSpeed>
+        </statOffsets>
+        <statFactors>
+        </statFactors>
+      </li>
+    </stages>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>Miho_Command_ChargeCommand_Hediff</defName>
+    <label>돌격 지휘 받음</label>
+    <description>돌격 지휘를 받았습니다.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>false</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_Link">
+        <requireLinkOnOtherPawn>false</requireLinkOnOtherPawn>
+        <maxDistance>9</maxDistance>
+        <customMote>Mote_CombatCommandLinkLine</customMote>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <statOffsets>
+		  <MoveSpeed>1</MoveSpeed>
+          <MeleeHitChance>3</MeleeHitChance>
+        </statOffsets>
+        <statFactors>
+          <MeleeCooldownFactor>0.75</MeleeCooldownFactor> 
+        </statFactors>
+        <capMods>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <AbilityDef ParentName="MihoWordOfBase">
+    <defName>Miho_Ability_Command_Mental</defName>
+    <label>격려 지휘</label>
+    <description>초능력을 통한 텔레파시로 주변 인물들을 격려합니다.</description>
+    <jobDef>CastAbilityOnThing</jobDef>
+    <targetRequired>False</targetRequired>
+    <canUseAoeToGetTargets>False</canUseAoeToGetTargets>
+    <stunTargetWhileCasting>True</stunTargetWhileCasting>
+    <showPsycastEffects>False</showPsycastEffects>
+    <iconPath>Icon/Abilities/Command_Mental</iconPath>
+    <hotKey>Misc12</hotKey>
+    <statBases>
+      <Ability_PsyfocusCost>0.4</Ability_PsyfocusCost> <!-- Minimum cost -->
+      <Ability_Duration>1000</Ability_Duration>
+    </statBases>
+        <groupDef>Miho_Word</groupDef>
+
+    <verbProperties>
+      <warmupTime>0.5</warmupTime>
+      <range>9.9</range>
+      <drawAimPie>False</drawAimPie>
+      <requireLineOfSight>False</requireLineOfSight>
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetPawns>false</canTargetPawns>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetAnimals>false</canTargetAnimals>
+        <canTargetHumans>false</canTargetHumans>
+        <canTargetMechs>false</canTargetMechs>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>Miho_Command_Mental_Hediff</hediffDef>
+        <onlyBrain>True</onlyBrain>
+        <onlyApplyToSelf>True</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+      </li>
+    </comps>
+  </AbilityDef>
+  
+  
+  <HediffDef ParentName="RoleStatBuff">
+    <defName>Miho_Command_Mental_Hediff</defName>
+    <label>격려</label>
+    <description>"아무튼 열심히 해봐!"</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath"/>
+      <li Class="HediffCompProperties_GiveHediffsInRange">
+        <range>9.9</range>
+        <mote>Mote_WorkCommand</mote>
+        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+        <targetingParameters>
+          <canTargetBuildings>false</canTargetBuildings>
+          <canTargetAnimals>false</canTargetAnimals>
+          <canTargetMechs>false</canTargetMechs>
+          <onlyTargetColonists>true</onlyTargetColonists>
+        </targetingParameters>
+        <hediff>Miho_Command_MentalCommand_Hediff</hediff>
+      </li>
+    </comps>
+    <isBad>false</isBad>
+  </HediffDef>
+
+  <HediffDef ParentName="WorkRoleAuraBuffHediffBase">
+    <defName>Miho_Command_MentalCommand_Hediff</defName>
+    <label>격려 받음</label>
+    <description>초능력으로 격려를 받아 무드 보너스를 받았습니다.</description>
+    <debugLabelExtra>other</debugLabelExtra>
+    <stages>
+      <li>
+        <statOffsets>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <ThoughtDef>
+    <defName>Miho_Command_MentalCommand_Hediff_Thought</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>Miho_Command_MentalCommand_Hediff</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>격려 받음</label>
+        <description>완장을 찬 정착민이 이렇게 말해주니까 난 힘낼 수 있어.</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>   
+    </stages>
+  </ThoughtDef>
+  
+</Defs>

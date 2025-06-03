@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef ParentName="FactionBase" >
+	<defName>Miho_Faction_Supremacist</defName>
+	<label>미호 패권주의자</label>
+    <description>나르시즘적 성향을 지닌 여우 군사 단체입니다. 인류는 미개하니 자기들의 애완동물이 되야한다 주장합니다.</description>
+	<colorSpectrum>
+		  <li>(1, 1, 1)</li>
+
+    </colorSpectrum>
+    <melaninRange>0~0.31</melaninRange>
+
+	<pawnSingular>미호</pawnSingular>
+    <pawnsPlural>미호들</pawnsPlural>
+	<autoFlee>true</autoFlee>
+	<categoryTag>Mihoic</categoryTag>
+	<listOrderPriority>30</listOrderPriority>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
+    <canSiege>false</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>대장</leaderTitle>
+	<settlementGenerationWeight>0.5</settlementGenerationWeight>
+
+	<factionNameMaker>NamerFaction_Miho</factionNameMaker>
+	<settlementNameMaker>NamerSettlement_Miho</settlementNameMaker>
+	<allowedCultures><li>MihoCultures</li></allowedCultures> <!--허용하는 문화(CultureDef)지정-->
+
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Miho_MihoicCodeofLaw</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+
+    </requiredMemes>
+    <disallowedPrecepts>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Strong_Subordinate</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">ApparelDesired_Soft_Subordinate</li>
+    </disallowedPrecepts>
+
+	<disallowedMemes> <!--포함시키지 않는 meme지정-->
+      <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+	  <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">MaleSupremacy</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">AnimalPersonhood</li>
+
+    </disallowedMemes>
+
+	<techLevel>Spacer</techLevel>
+    <!--<minSettlementTemperatureChanceCurve> 
+      <points>
+        <li>(-40.1,  0.00001)</li>
+        <li>(-40,    1)</li>
+        <li>(-20,    0.00001)</li>
+      </points>
+    </minSettlementTemperatureChanceCurve> -->
+		<naturalEnemy>true</naturalEnemy>
+
+ <backstoryFilters>
+      <li>
+        <categories>
+			<li>Tribal</li>
+        </categories>
+      </li>
+ </backstoryFilters>
+    <caravanTraderKinds>
+      <li>Caravan_Miho_Drone</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+      <li>Caravan_Outlander_PirateMerchant</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Miho</li>
+    </baseTraderKinds>
+    <allowedArrivalTemperatureRange>-50~55</allowedArrivalTemperatureRange>
+
+	<raidLootMaker>MihoRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(500, 100)</li>
+				<li>(1000, 150)</li>
+				<li>(2000, 500)</li>
+				<li>(2001, 10000)</li>
+			</points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>5</commonality>
+        <options>
+
+		  <Miho_Soldier_Militia>600</Miho_Soldier_Militia>
+		  <Miho_Soldier_Marksman>900</Miho_Soldier_Marksman>
+		  <Miho_Soldier_MarksmanEar>550</Miho_Soldier_MarksmanEar>
+		  <Miho_Soldier_TacticalMagi>100</Miho_Soldier_TacticalMagi>
+		  <Miho_Soldier_MilitiaCaptain>30</Miho_Soldier_MilitiaCaptain>
+
+
+		  <Miho_Soldier_Firepower>25</Miho_Soldier_Firepower>
+		  <Miho_Soldier_Medic>25</Miho_Soldier_Medic>
+
+
+		  <Miho_Mech_Sapsal>15</Miho_Mech_Sapsal>
+		  <Miho_Mech_BulgasalGrenade>5</Miho_Mech_BulgasalGrenade>
+
+		  <Miho_Mech_CataphractRocket>7</Miho_Mech_CataphractRocket>
+
+        </options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+		  <Miho_Soldier_Militia>400</Miho_Soldier_Militia>
+		  <Miho_Soldier_MilitiaMelee>180</Miho_Soldier_MilitiaMelee>
+		  <Miho_Soldier_MilitiaCaptain>30</Miho_Soldier_MilitiaCaptain>
+
+
+		  <Miho_Soldier_Medic>40</Miho_Soldier_Medic>
+
+		  <Miho_Soldier_Marksman>700</Miho_Soldier_Marksman>
+		  <Miho_Soldier_MarksmanEar>400</Miho_Soldier_MarksmanEar>
+		  <Miho_Soldier_TacticalMagi>100</Miho_Soldier_TacticalMagi>
+
+		  <Miho_Soldier_Firepower>30</Miho_Soldier_Firepower>
+
+		  <Miho_Mech_Sapsal>15</Miho_Mech_Sapsal>
+		  <Miho_Mech_Bulgasal>6</Miho_Mech_Bulgasal>
+
+		  <Miho_Mech_CataphractRocket>7</Miho_Mech_CataphractRocket>
+
+
+        </options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <options>
+		  <Miho_Soldier_Militia>400</Miho_Soldier_Militia>
+		  <Miho_Soldier_MilitiaMelee>180</Miho_Soldier_MilitiaMelee>
+		  <Miho_Soldier_Medic>40</Miho_Soldier_Medic>
+		  <Miho_Soldier_MilitiaCaptain>30</Miho_Soldier_MilitiaCaptain>
+
+		  <Miho_Soldier_Marksman>700</Miho_Soldier_Marksman>
+		  <Miho_Soldier_MarksmanEar>400</Miho_Soldier_MarksmanEar>
+		  <Miho_Soldier_TacticalMagi>100</Miho_Soldier_TacticalMagi>
+
+		  <Miho_Soldier_Firepower>30</Miho_Soldier_Firepower>
+
+		  <Miho_Mech_Sapsal>15</Miho_Mech_Sapsal>
+		  <Miho_Mech_Bulgasal>6</Miho_Mech_Bulgasal>
+
+
+
+        </options>
+      </li>
+	  <li>
+        <kindDef>Combat</kindDef>		
+        <commonality>30</commonality>
+        <options>
+		  <Miho_Soldier_Marksman>990</Miho_Soldier_Marksman>
+		  <Miho_Soldier_MarksmanEar>600</Miho_Soldier_MarksmanEar>
+		  <Miho_Soldier_TacticalMagi>100</Miho_Soldier_TacticalMagi>
+		  <Miho_Soldier_MilitiaCaptain>30</Miho_Soldier_MilitiaCaptain>
+
+		  <Miho_Soldier_MilitiaMelee>150</Miho_Soldier_MilitiaMelee>
+		  <Miho_Soldier_Medic>40</Miho_Soldier_Medic>
+
+		  <Miho_Soldier_Firepower>50</Miho_Soldier_Firepower>
+		  <Miho_Soldier_Battlemage>2</Miho_Soldier_Battlemage>
+
+		  <Miho_Mech_Sapsal>10</Miho_Mech_Sapsal>
+		  <Miho_Mech_BulgasalGrenade>4</Miho_Mech_BulgasalGrenade>
+		  <Miho_Mech_Bulgasal>3</Miho_Mech_Bulgasal>
+
+
+        </options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options>
+		  <Miho_Soldier_PMC_InfantryBasic>65</Miho_Soldier_PMC_InfantryBasic>
+
+		  <Miho_Soldier_MilitiaMelee>130</Miho_Soldier_MilitiaMelee>
+		  <Miho_Soldier_Medic>20</Miho_Soldier_Medic>
+		  <Miho_Soldier_TacticalMagi>20</Miho_Soldier_TacticalMagi>
+
+		  <Miho_Mech_Sapsal>12</Miho_Mech_Sapsal>
+
+
+	
+        </options>
+      </li>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+		  <Miho_Soldier_PMC_InfantryBasic>65</Miho_Soldier_PMC_InfantryBasic>
+		  <Miho_Mech_BulgasalGrenade>3</Miho_Mech_BulgasalGrenade>
+		  <Miho_Mech_Bulgasal>3</Miho_Mech_Bulgasal>
+		  <Miho_Soldier_MilitiaMelee>80</Miho_Soldier_MilitiaMelee>
+		  <Miho_Soldier_Medic>20</Miho_Soldier_Medic>
+		  <Miho_Soldier_TacticalMagi>20</Miho_Soldier_TacticalMagi>
+
+
+        </options>
+      </li>
+	   <li>
+        <kindDef>Combat</kindDef>		
+        <commonality>0</commonality>
+        <options>
+          <Miho_Leader>1</Miho_Leader>
+        </options>
+      </li>
+           <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Miho_Colonist>10</Miho_Colonist>
+        </options>
+      </li>
+	  <li>
+      <kindDef>Trader</kindDef>
+	  <commonality>1</commonality>
+        <traders>
+          <Miho_Seasonal_SantaTrader>1</Miho_Seasonal_SantaTrader>  <!--Miho_Trader-->
+        </traders>
+        <carriers>
+          <Muffalo>5</Muffalo> <!--Muffalo-->
+        </carriers>
+        <guards>
+		  <Miho_Soldier_PMC_InfantryBasic>5</Miho_Soldier_PMC_InfantryBasic>
+		  <Miho_Soldier_Militia>15</Miho_Soldier_Militia>
+
+        </guards>
+      </li>
+	  <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Miho_Colonist>100</Miho_Colonist>
+          <Miho_Leader>1</Miho_Leader>
+		  <Miho_Soldier_Militia>300</Miho_Soldier_Militia>
+        </options>
+      </li>
+    </pawnGroupMakers>
+		<raidCommonalityFromPointsCurve>
+			<points>
+				<li>(10,  2)</li>
+				<li>(700,  2.5)</li>
+				<li>(2400, 2.5)</li>
+				<li>(3800, 2.1)</li>
+				<li>(5000, 2.2)</li>
+				<li>(6500, 3.4)</li>
+				<li>(8000, 3.8)</li>
+			</points>
+		</raidCommonalityFromPointsCurve>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Miho_Ebony_SilkCloth</li>
+        <li>Cloth</li>
+        <li>Miho_MilitaryGradeBalisticCeramics</li>
+        <li>Miho_Ceramics</li>
+        <li>WoolSheep</li>
+		<li>DevilstrandCloth</li>
+
+		
+      </thingDefs>
+    </apparelStuffFilter>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>Icon/Faction/PirateMiho</factionIconPath>
+	<maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation> <!--초기설정에서 최대로 넣을 수 있는 팩션의 갯수 -->
+    <configurationListOrderPriority>31</configurationListOrderPriority> <!--초기설정에서 팩션갯수를 정하는 메뉴에서의 정렬순서?인듯	-->
+  </FactionDef>
+</Defs>

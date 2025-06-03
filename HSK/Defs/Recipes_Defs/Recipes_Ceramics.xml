@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--===Miho ceramics===-->
+<Defs>
+	<RecipeDef>
+		<defName>Miho_PastetoCeramicShaft</defName>
+		<label>미호 세라믹 제작</label>
+		<description>세라믹을 제작합니다.</description>
+		<jobString>세라믹을 제작중.</jobString>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>2000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>StoneChunks</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>StoneChunks</li>
+			</categories>
+		</fixedIngredientFilter>
+		<products>
+			<Miho_Ceramics>20</Miho_Ceramics>
+		</products>
+		<recipeUsers>
+			<li>TableFurnace</li>
+			<li>ElectricSmelter</li>
+		</recipeUsers>
+		<workSkill>Crafting</workSkill>
+		<workSkillLearnFactor>0.8</workSkillLearnFactor>
+	</RecipeDef>
+
+	<RecipeDef>
+		<defName>Miho_PastetoMCeramicShaft</defName>
+		<label>미호 군용 세라믹 제작</label>
+		<description>군용 세라믹을 제작합니다.</description>
+		<jobString>군용 세라믹을 제작중.</jobString>
+		<workSpeedStat>SmeltingSpeed</workSpeedStat>
+		<effectWorking>Smelt</effectWorking>
+		<soundWorking>Recipe_Smelt</soundWorking>
+		<workAmount>4000</workAmount>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SoftClay</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Carbon</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ComponentIndustrial</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<products>
+			<Miho_MilitaryGradeBalisticCeramics>20</Miho_MilitaryGradeBalisticCeramics>
+		</products>
+		<recipeUsers>
+			<li>ElectricSmelter</li>
+		</recipeUsers>
+		<workSkill>Crafting</workSkill>
+		<workSkillLearnFactor>0.8</workSkillLearnFactor>
+	</RecipeDef>
+</Defs>
