@@ -359,7 +359,7 @@
 			</li>
 		</ingredients>
 		<products>
-			<Gun_LMG>1</Gun_LMG>
+			<Miho_Weapon_RifleMachinegun>1</Miho_Weapon_RifleMachinegun>
 		</products>
 		<fixedIngredientFilter>
 			<thingDefs>
@@ -452,7 +452,7 @@
 	</RecipeDef>
 
 	<RecipeDef ParentName="RangedWeaponRecipeBase">
-		<defName>BuildMiho_Weapon_Shotgun</defName>
+		<defName>Build_Miho_Weapon_Shotgun</defName>
 		<label>Build Hunting rifle</label>
 		<description>Precision shotgun suitable for hunting.\nCaliber: 12 Gauge</description>
 		<jobString>Building Hunting rifle.</jobString>

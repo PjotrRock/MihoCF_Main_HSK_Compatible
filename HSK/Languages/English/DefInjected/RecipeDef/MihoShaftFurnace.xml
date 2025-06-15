@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<Miho_PastetoCeramicShaft.label>Make Miho Ceramic</Miho_PastetoCeramicShaft.label>
+	<Miho_PastetoCeramicShaft.description>Make Miho Ceramic.</Miho_PastetoCeramicShaft.description>
+	<Miho_PastetoCeramicShaft.jobString>Making Miho Ceramic.</Miho_PastetoCeramicShaft.jobString>
+
+	<Miho_PastetoMCeramicShaft.label>Make Miho Military Grade Ceramic</Miho_PastetoMCeramicShaft.label>
+	<Miho_PastetoMCeramicShaft.description>Make Miho Military Grade Ceramic.</Miho_PastetoMCeramicShaft.description>
+	<Miho_PastetoMCeramicShaft.jobString>Making Miho Military Grade Ceramic.</Miho_PastetoMCeramicShaft.jobString>
+
+</LanguageData>

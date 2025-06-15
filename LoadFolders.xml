@@ -8,6 +8,6 @@
 		<li IfModActive="Owlchemist.SeedsPleaseLite">SeedspleaseTranslation</li>
         <li IfModActive="mihotattoo.outremer">Tattoo</li>
 		
-		<li>HSK</li>	
+		<li>HSK</li>
     </v1.5>
 </loadFolders>

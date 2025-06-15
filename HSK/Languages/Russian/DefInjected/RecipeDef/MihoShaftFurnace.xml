@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<Miho_PastetoCeramicShaft.label>Изготовить Керамику Михо</Miho_PastetoCeramicShaft.label>
+	<Miho_PastetoCeramicShaft.description>Изготовить Керамику Михо.</Miho_PastetoCeramicShaft.description>
+	<Miho_PastetoCeramicShaft.jobString>Изготовление Керамики Михо.</Miho_PastetoCeramicShaft.jobString>
+
+	<Miho_PastetoMCeramicShaft.label>Изготовить  Керамику Михо Военного Качества</Miho_PastetoMCeramicShaft.label>
+	<Miho_PastetoMCeramicShaft.description>Изготовить Керамику Михо Военного Качества.</Miho_PastetoMCeramicShaft.description>
+	<Miho_PastetoMCeramicShaft.jobString>Изготовление  Керамики Михо Военного Качества.</Miho_PastetoMCeramicShaft.jobString>
+
+</LanguageData>
