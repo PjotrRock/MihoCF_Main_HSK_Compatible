@@ -2,13 +2,13 @@
 <LanguageData>
 
 	<Miho_Turret_Machinegun.label>Тяжелый Пулемет Михо</Miho_Turret_Machinegun.label>
-	<Miho_Turret_Machinegun.description>Турельный тяжелый пулемет, использующий боеприпасы калибра 7.7 мм. У него средние оптические характеристики, что делает его превосходным по сравнению с обычным пулеметом для механоидов.</Miho_Turret_Machinegun.description>
+	<Miho_Turret_Machinegun.description>Турельный тяжелый пулемет. У него средние оптические характеристики, что делает его превосходным по сравнению с обычным пулеметом для механоидов.</Miho_Turret_Machinegun.description>
 
 	<Miho_BuildingWeapon_Machinegun.label>Тяжелый Пулемет Михо</Miho_BuildingWeapon_Machinegun.label>
-	<Miho_BuildingWeapon_Machinegun.description>Тяжелый пулемет калибра 7.7 мм.</Miho_BuildingWeapon_Machinegun.description>
+	<Miho_BuildingWeapon_Machinegun.description>Тяжелый пулемет.</Miho_BuildingWeapon_Machinegun.description>
 
 	<Miho_Turret_Missile.label>Средний ПТРК Михо</Miho_Turret_Missile.label>
-	<Miho_Turret_Missile.description>Пусковая установка для управляемых ракет SACLOS.</Miho_Turret_Missile.description>
+	<Miho_Turret_Missile.description>Пусковая установка для управляемых ракет.</Miho_Turret_Missile.description>
 
 	<Miho_BuildingWeapon_Missile.label>Средний ПТРК</Miho_BuildingWeapon_Missile.label>
 	<Miho_BuildingWeapon_Missile.description>Средний ПТРК</Miho_BuildingWeapon_Missile.description>

@@ -2,10 +2,10 @@
 <LanguageData>
 
 	<Miho_Turret_Machinegun.label>Miho Heavy Machine Gun</Miho_Turret_Machinegun.label>
-	<Miho_Turret_Machinegun.description>A heavy machine gun turret that uses 7.7mm ammunition. It has moderate optics, making it superior to the machine gun for mechanoids.</Miho_Turret_Machinegun.description>
+	<Miho_Turret_Machinegun.description>A heavy machine gun turret. It has moderate optics, making it superior to the machine gun for mechanoids.</Miho_Turret_Machinegun.description>
 
 	<Miho_BuildingWeapon_Machinegun.label>Miho Heavy Machine Gun</Miho_BuildingWeapon_Machinegun.label>
-	<Miho_BuildingWeapon_Machinegun.description>A 7.7mm Heavy Machine Gun.</Miho_BuildingWeapon_Machinegun.description>
+	<Miho_BuildingWeapon_Machinegun.description>A Heavy Machine Gun.</Miho_BuildingWeapon_Machinegun.description>
 	
 	<Miho_Turret_Missile.label>Miho Medium-MAT</Miho_Turret_Missile.label>
 	<Miho_Turret_Missile.description>A SACLOS Guided Missile Launcher.</Miho_Turret_Missile.description>

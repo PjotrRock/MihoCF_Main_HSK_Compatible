@@ -62,11 +62,12 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleCQB</defName>
 		<statBases>
+			<MarketValue>600</MarketValue>
 			<SightsEfficiency>0.70</SightsEfficiency>
 			<ShotSpread>0.17</ShotSpread>
 			<SwayFactor>0.77</SwayFactor>
 			<Bulk>2.7</Bulk>
-			<Mass>2.5</Mass>
+			<Mass>2.1</Mass>
 			<RangedWeapon_Cooldown>0.36</RangedWeapon_Cooldown>
 		</statBases>
 		<Properties>
@@ -92,6 +93,15 @@
 			<aiUseBurstMode>FALSE</aiUseBurstMode>
 			<aiAimMode>Snapshot</aiAimMode>
 		</FireModes>
+		<weaponTags>
+			<li>SMG1</li>
+			<li>Gun</li>
+			<li>TierOneSMG</li>
+			<li>CE_OneHandedWeapon</li>
+		</weaponTags>
+		<weaponClasses>
+			<li>RangedLight</li>
+		</weaponClasses>
 	</Operation>
 
 	<!-- ========== Rifle =========== -->
@@ -99,6 +109,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleDefence</defName>
 		<statBases>
+			<MarketValue>1300</MarketValue>
 			<SightsEfficiency>1.00</SightsEfficiency>
 			<ShotSpread>0.09</ShotSpread>
 			<SwayFactor>1.22</SwayFactor>
@@ -129,6 +140,13 @@
 			<aiUseBurstMode>TRUE</aiUseBurstMode>
 			<aiAimMode>AimedShot</aiAimMode>
 		</FireModes>
+		<weaponTags>
+			<li>RF3</li>
+			<li>IndustrialGunAdvanced</li>
+			<li>TierTwoRifle</li>
+			<li>TierOneRifle</li>
+			<li>CE_AI_Rifle</li>
+		</weaponTags>
 	</Operation>
 	
 	<!-- ========== grenade Launcher Rifle =========== -->
@@ -136,6 +154,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleDefenceGrenade</defName>
 		<statBases>
+			<MarketValue>2100</MarketValue>
 			<SightsEfficiency>1.00</SightsEfficiency>
 			<ShotSpread>0.09</ShotSpread>
 			<SwayFactor>1.32</SwayFactor>
@@ -209,6 +228,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleMachinegun</defName>
 		<statBases>
+			<MarketValue>1900</MarketValue>
 			<SightsEfficiency>1.00</SightsEfficiency>
 			<ShotSpread>0.06</ShotSpread>
 			<SwayFactor>1.38</SwayFactor>
@@ -230,7 +250,7 @@
 			<muzzleFlashScale>9</muzzleFlashScale>
 		</Properties>
 		<AmmoUser>
-			<magazineSize>30</magazineSize>
+			<magazineSize>40</magazineSize>
 			<reloadTime>4</reloadTime>
 			<ammoSet>AmmoSet_556x45mmNATO</ammoSet>
 		</AmmoUser>
@@ -241,6 +261,9 @@
 		</FireModes>
 		<weaponTags>
 			<li>Bipod_LMG</li>
+			<li>MG2</li>
+			<li>GunHeavy</li>
+			<li>MachineGun</li>
 		</weaponTags>
 	</Operation>
 
@@ -249,11 +272,13 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleOld</defName>
 		<statBases>
+			<MarketValue>750</MarketValue>
 			<RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.05</ShotSpread>
 			<SwayFactor>1.48</SwayFactor>
-			<Bulk>10.73</Bulk>
+			<Bulk>11</Bulk>
+			<Mass>4.2</Mass>
 		</statBases>
 		<Properties>
 			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
@@ -281,6 +306,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RifleGrenade</defName>
 		<statBases>
+			<MarketValue>2750</MarketValue>
 			<RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.12</ShotSpread>
@@ -292,7 +318,7 @@
 			<hasStandardCommand>true</hasStandardCommand>
 			<defaultProjectile>Bullet_RPG7Grenade_HEAT</defaultProjectile>
 			<warmupTime>1.1</warmupTime>
-			<range>46</range>
+			<range>66</range>
 			<soundCast>Miho_GrenadeLauncher</soundCast>
 			<targetParams>
 				<canTargetLocations>true</canTargetLocations>
@@ -302,7 +328,7 @@
 		</Properties>
 		<AmmoUser>
 			<magazineSize>5</magazineSize>
-			<reloadTime>4</reloadTime>
+			<reloadTime>6</reloadTime>
 			<ammoSet>AmmoSet_RPG7Grenade</ammoSet>
 		</AmmoUser>
 		<FireModes>
@@ -316,6 +342,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_Shotgun</defName>
 		<statBases>
+			<MarketValue>750</MarketValue>
 			<RangedWeapon_Cooldown>0.89</RangedWeapon_Cooldown>
 			<SightsEfficiency>1</SightsEfficiency>
 			<ShotSpread>0.05</ShotSpread>
@@ -350,6 +377,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_AutoShotgun</defName>
 		<statBases>
+			<MarketValue>1200</MarketValue>
 			<SightsEfficiency>0.70</SightsEfficiency>
 			<ShotSpread>0.17</ShotSpread>
 			<SwayFactor>0.77</SwayFactor>
@@ -388,6 +416,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RiflePlasma</defName>
 		<statBases>
+			<MarketValue>2200</MarketValue>
 			<SightsEfficiency>1.10</SightsEfficiency>
 			<ShotSpread>0.2</ShotSpread>
 			<SwayFactor>1.34</SwayFactor>
@@ -426,6 +455,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_SniperPlasma</defName>
 		<statBases>
+			<MarketValue>2700</MarketValue>
 			<SightsEfficiency>2.60</SightsEfficiency>
 			<ShotSpread>0.02</ShotSpread>
 			<SwayFactor>1.44</SwayFactor>
@@ -467,6 +497,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_ShotgunPsychic</defName>
 		<statBases>
+			<MarketValue>2200</MarketValue>
 			<RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
 			<SightsEfficiency>1.1</SightsEfficiency>
 			<ShotSpread>0.09</ShotSpread>
@@ -502,6 +533,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_Pistol</defName>
 		<statBases>
+			<MarketValue>300</MarketValue>
 			<SightsEfficiency>0.80</SightsEfficiency>
 			<ShotSpread>0.35</ShotSpread>
 			<SwayFactor>0.75</SwayFactor>
@@ -546,6 +578,7 @@
 	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
 		<defName>Miho_Weapon_RiflePsychic</defName>
 		<statBases>
+			<MarketValue>2300</MarketValue>
 			<RangedWeapon_Cooldown>0.37</RangedWeapon_Cooldown>
 			<SightsEfficiency>3.00</SightsEfficiency>
 			<ShotSpread>0.09</ShotSpread>

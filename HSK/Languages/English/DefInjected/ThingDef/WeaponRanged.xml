@@ -57,7 +57,7 @@
 	<Miho_Weapon_AutoShotgun.label>Miho Heavy Shotgun</Miho_Weapon_AutoShotgun.label>
 	<Miho_Weapon_AutoShotgun.description>A classic but intimidating automatic shotgun.\n\nCaliber: .12 gauge</Miho_Weapon_AutoShotgun.description>
 	<Miho_Weapon_Shotgun_Proj.label>pellet</Miho_Weapon_Shotgun_Proj.label>
-	<Build_Miho_Weapon_RifleGrenade.description>A classic but intimidating automatic shotgun.\n\nCaliber: .12 gauge</Build_Miho_Weapon_RifleGrenade.description>
+	<Build_Miho_Weapon_AutoShotgun.description>A classic but intimidating automatic shotgun.\n\nCaliber: .12 gauge</Build_Miho_Weapon_AutoShotgun.description>
 
 
 	<Miho_Weapon_RiflePlasma.label>Miho Plasma Rifle</Miho_Weapon_RiflePlasma.label>
